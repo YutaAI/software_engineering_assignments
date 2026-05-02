@@ -1,0 +1,30 @@
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Editor directories
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# PDF and extracted text created during analysis (do not track)
+CRUD Operation in FastAPI - Sandwich Maker Machine Program.pdf
+crud_pdf_text.txt
+
+# Test and coverage
+.pytest_cache/
+.coverage
