@@ -20,6 +20,12 @@ class OrderCreate(OrderBase):
 
 class OrderUpdate(BaseModel):
     customer_name: Optional[str] = None
+    customer_phone: Optional[str] = None
+    delivery_address: Optional[str] = None
+    order_type: Optional[str] = None
+    payment_method: Optional[str] = None
+    order_status: Optional[str] = None
+    tracking_number: Optional[str] = None
     description: Optional[str] = None
 
 
