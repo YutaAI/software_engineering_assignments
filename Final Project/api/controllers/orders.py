@@ -2,11 +2,18 @@ from sqlalchemy.orm import Session
 from fastapi import HTTPException, status, Response, Depends
 from ..models import orders as model
 from sqlalchemy.exc import SQLAlchemyError
+from uuid import uuid4
 
 
 def create(db: Session, request):
     new_item = model.Order(
         customer_name=request.customer_name,
+        customer_phone=getattr(request, "customer_phone", None),
+        delivery_address=getattr(request, "delivery_address", None),
+        order_type=getattr(request, "order_type", None),
+        payment_method=getattr(request, "payment_method", None),
+        order_status=getattr(request, "order_status", "received"),
+        tracking_number=getattr(request, "tracking_number", uuid4().hex[:12]),
         description=request.description
     )
 
